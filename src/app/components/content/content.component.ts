@@ -11,9 +11,17 @@ const iconLibKeys = Object.keys(far)
 
 export class ContentComponent {
   curIcon: IconDefinition = far[iconLibKeys[3]];
+  debounceOn: boolean = false;
+  timeoutId: ReturnType<typeof setTimeout> | null = null;
 
   onBtnClick() {
-    setTimeout( () => {
+    if (this.debounceOn) {
+      if(this.timeoutId) {
+        clearTimeout(this.timeoutId);
+        this.timeoutId = null;
+      }
+    }
+    this.timeoutId = setTimeout( () => {
       // generating next random index for icon collection
       const nextIconIndex = Math.floor(Math.random() * iconLibKeys.length );
       this.curIcon = far[iconLibKeys[nextIconIndex]];

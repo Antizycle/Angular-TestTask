@@ -1,4 +1,14 @@
 <main class="main">
   <app-content-icon [icon]="curIcon"></app-content-icon>
   <app-button (btnClick)="onBtnClick()"></app-button>
+  <div class="main__debounce-toggle">
+    <label for="debounce">Enable debounce</label>
+    <input 
+      type="checkbox" 
+      name="debounce"
+      id="debounce" 
+      [(ngModel)]="debounceOn"
+      class="main__checkbox"
+      />
+  </div>
 </main>

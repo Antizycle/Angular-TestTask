@@ -3,4 +3,14 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  &__debounce-toggle {
+    margin-top: 30px;
+  }
+
+  &__checkbox {
+    margin-left: 1rem;
+    outline: transparent;
+    accent-color: orangered;
+  }
 }
